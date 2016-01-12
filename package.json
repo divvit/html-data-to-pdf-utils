@@ -3,9 +3,9 @@
   "description": "Simple and lightweight HTML with Json data passer to PDF conversion using Node and PhantomJS",
   "version": "0.1.0",
   "description": "country common function like: countryList, timeZone for Country, Currency...",
-  "main": "./src/html2pdf",
+  "main": "./src/html-to-pdf",
   "bin": {
-    "html2pdf": "./bin/html2pdf"
+    "htmldata2pdf": "./bin/html-to-pdf"
   },
   "scripts": {
     "test": "make test"

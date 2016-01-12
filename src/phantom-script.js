@@ -7,13 +7,13 @@ var cmdArgs = ["htmlPath",
              "cssPath",
              "jsPath",
              "runningsPath",
-             "jsonData",
              "paperFormat",
              "paperOrientation",
              "paperBorder",
              "paperWidth",
              "paperHeight",
-             "renderDelay"];
+             "renderDelay",
+             "jsonData"];
 
 args = cmdArgs.reduce(function (args, name, i) {
     args[name] = system.args[i + 1];
@@ -27,19 +27,18 @@ page.open(page.libraryPath + "/skeleton.html", function (status) {
     phantom.exit(1);
     return;
   }
-
+  
   /* Add HTML source to the page */
-  page.evaluate(function(html) {
+  page.evaluate(function(html, jsonData) {
     var body = document.querySelector("body");
-
-    if(Object.keys(data).length > 0){
-      Object.keys(data).forEach(function(item) {
-        html  = html.replace( new RegExp("\\$"+ item ,"gm"), data[item] )
+    if(jsonData !== ''){
+      var jsonData = eval("(" + jsonData + ')');
+      Object.keys(jsonData).forEach(function(item) {
+        html  = html.replace( new RegExp("\\$" + item,"gm"), jsonData[item] )
       });
     }
-
     body.innerHTML = html
-  }, fs.read(args.htmlPath));
+  }, fs.read(args.htmlPath), args.jsonData);
 
   /* Add CSS source to the page */
   page.evaluate(function(cssPath) {

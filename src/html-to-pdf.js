@@ -6,8 +6,8 @@ var fs = require("fs"),
 	childProcess = require("child_process"),
 	tmp = require("tmp"),
 	async = require("async"),
-	debug = require('debug')('html2pdf'),
-	PDFResult = require("./pdfResult.js");
+	debug = require('debug')('html-to-pdf'),
+	PDFResult = require("./pdf-result.js");
 
 /* TODO: Add config for HTML2PDF class.
  * Including path to skeleton html file
@@ -22,13 +22,12 @@ var fs = require("fs"),
 function convert(options, callback) {
 	var options = options || {},
     html = options.html || '<p>No HTML source specified!</p>',
-    data = options.data || {},
     css = options.css || '',
     js = options.js || '',
     runnings = options.runnings || '',
+    data = options.data || '',
     deleteOnAction = options.deleteOnAction || false,
     paperSize = options.paperSize || {};
-
     /* Create temporary files for PDF, HTML, CSS and JS storage
      * We need to wait for all of them to finish creating the files before proceeding.
      */
@@ -78,14 +77,15 @@ function convert(options, callback) {
 			results[2],
 			results[3],
 			results[4],
-			data,
 			paperFormat,
 			paperOrientation,
 			paperBorder,
 			paperWidth,
 			paperHeight,
-			renderDelay
+			renderDelay,
+			data
 		];
+		console.log(childArgs);
 
 		childProcess.execFile(phantom.path, childArgs, function(err, stdout, stderr) {
 			var opPointer = new PDFResult(err, results[1]);
