@@ -50,7 +50,7 @@ Calling convert() requires an options object, which includes the following defin
 	"js" : "Path to additional JavaScript file",
 	"runnings" : "Path to runnings file. Check further below for explanation.",
 	"paperSize" : "Two ways to do this, see below",
-	"deleteOnAction" : true/false (Deletes the created temp file once you access it via toBuffer() or toFile())
+	"deleteOnAction" : "true/false (Deletes the created temp file once you access it via toBuffer() or toFile())"
 }
 ````
 
