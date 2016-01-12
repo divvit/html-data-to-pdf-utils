@@ -1,0 +1,44 @@
+{
+  "name": "@divvit/html-data-to-pdf-utils",
+  "description": "Simple and lightweight HTML with Json data passer to PDF conversion using Node and PhantomJS",
+  "version": "0.1.0",
+  "description": "country common function like: countryList, timeZone for Country, Currency...",
+  "main": "./src/html2pdf",
+  "bin": {
+    "html2pdf": "./bin/html2pdf"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divvit/html-data-to-pdf-utils.git"
+  },
+  "keywords": [
+    "pdf",
+    "html",
+    "converter",
+  ],
+  "author": "Anh Nguyen <anh@divvit.com> (https://wwww.divvit.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/divvit/html-data-to-pdf-utils/issues"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  },
+  "homepage": "https://github.com/divvit/html-data-to-pdf-utils#readme",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "phantomjs": "latest",
+    "async": "latest",
+    "tmp": "latest",
+    "debug": "latest"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
