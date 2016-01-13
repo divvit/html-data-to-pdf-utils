@@ -34,7 +34,7 @@ page.open(page.libraryPath + "/skeleton.html", function (status) {
     if(jsonData !== ''){
       var jsonData = eval("(" + jsonData + ')');
       Object.keys(jsonData).forEach(function(item) {
-        html  = html.replace( new RegExp("\\$" + item,"gm"), jsonData[item] )
+        html  = html.replace( new RegExp("\\$" + item + "\\$","gm"), jsonData[item] )
       });
     }
     body.innerHTML = html

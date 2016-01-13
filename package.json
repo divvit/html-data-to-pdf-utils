@@ -1,8 +1,7 @@
 {
   "name": "@divvit/html-data-to-pdf-utils",
-  "description": "Simple and lightweight HTML with Json data passer to PDF conversion using Node and PhantomJS",
-  "version": "0.1.0",
   "description": "country common function like: countryList, timeZone for Country, Currency...",
+  "version": "0.5.0",
   "main": "./src/html-to-pdf",
   "bin": {
     "htmldata2pdf": "./bin/html-to-pdf"

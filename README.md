@@ -8,6 +8,8 @@ Simple and lightweight HTML to text conversion using Node and PhantomJS.
 npm install @divvit/html-data-to-pdf-utils
 ````
 
+## v0.5.0 Stable
+
 ## Dependencies
 
 1. PhantomJS
@@ -86,3 +88,4 @@ Anh Nguyen, Nino Ulsamer, Divvit AB
 ## Release History
 
 * 0.1.0 Initial release
+* 0.5.0 fixed bug release
